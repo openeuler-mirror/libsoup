@@ -6,7 +6,7 @@ License:        LGPLv2
 URL:            https://wiki.gnome.org/Projects/libsoup
 Source0:        https://download.gnome.org/sources/%{name}/2.66/%{name}-%{version}.tar.xz
 BuildRequires:  glib2-devel glib-networking krb5-devel gobject-introspection-devel gettext
-BuildRequires:  libxml2-devel libpsl-devel sqlite-devel vala gtk-doc meson
+BuildRequires:  libxml2-devel libpsl-devel sqlite-devel vala gtk-doc meson libxslt
 
 Requires:       glib2 glib-networking
 
