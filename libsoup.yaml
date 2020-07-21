@@ -1,0 +1,4 @@
+version_control: gitlab.gnome
+src_repo: libsoup
+tag_prefix: LIBSOUP_
+seperator: "."
