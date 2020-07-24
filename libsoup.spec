@@ -1,12 +1,13 @@
 Name:           libsoup
-Version:        2.66.1
+Version:        2.71.0
 Release:        1
 Summary:        An HTTP library implementation
 License:        LGPLv2
 URL:            https://wiki.gnome.org/Projects/libsoup
-Source0:        https://download.gnome.org/sources/%{name}/2.66/%{name}-%{version}.tar.xz
+Source0:        https://download.gnome.org/sources/%{name}/2.71/%{name}-%{version}.tar.xz
 BuildRequires:  glib2-devel glib-networking krb5-devel gobject-introspection-devel gettext
 BuildRequires:  libxml2-devel libpsl-devel sqlite-devel vala gtk-doc meson libxslt
+BuildRequires:  samba-winbind-clients brotli-devel
 
 Requires:       glib2 glib-networking
 
@@ -28,11 +29,14 @@ The %{name}-devel package contains libraries and header files for %{name}.
 %autosetup -n %{name}-%{version} -p1
 
 %build
-%meson -Ddoc=true
+%meson -Dgtk_doc=true
 %meson_build
 
 %install
 %meson_install
+
+%check
+%meson_test
 
 %files
 %defattr(-,root,root)
@@ -53,8 +57,14 @@ The %{name}-devel package contains libraries and header files for %{name}.
 %files          help
 %defattr(-,root,root)
 %doc README NEWS
-%{_datadir}/gtk-doc/html/*
+%{_datadir}/gtk-doc/html/libsoup-2.4/*
 
 %changelog
+* Thu Jul 23 2020 openEuler Buildteam <buildteam@openeuler.org> - 2.71.0-1
+- Type:enhancement
+- ID:NA
+- SUG:NA
+- DESC:upgrade to 2.71.0
+
 * Wed Aug 28 2019 openEuler Buildteam <buildteam@openeuler.org> - 2.66.1-1
 - Package init
