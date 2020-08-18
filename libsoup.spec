@@ -1,6 +1,6 @@
 Name:           libsoup
 Version:        2.70.0
-Release:        1
+Release:        2
 Summary:        An HTTP library implementation
 License:        LGPLv2
 URL:            https://wiki.gnome.org/Projects/libsoup
@@ -64,6 +64,9 @@ The %{name}-devel package contains libraries and header files for %{name}.
 %{_datadir}/gtk-doc/html/libsoup-2.4/*
 
 %changelog
+* Tue Aug 18 2020 wenzhanli<wenzhanli2@huawei.com> - 2.70.0-2
+- add release version for update
+
 * Thu Apr 16 2020 huzunhao <huzunhao2@huawei.com> - 2.70.0-1
 - Type:bugfix
 - Id:NA
