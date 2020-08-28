@@ -1,14 +1,10 @@
 Name:           libsoup
-Version:        2.70.0
-Release:        2
+Version:        2.71.0
+Release:        1
 Summary:        An HTTP library implementation
 License:        LGPLv2
 URL:            https://wiki.gnome.org/Projects/libsoup
-Source0:        https://download.gnome.org/sources/%{name}/2.70/%{name}-%{version}.tar.xz
-
-Patch6000:      libsoup-disable-hsts-tests.patch
-Patch6001:      libsoup-test-utils-fix.patch
-
+Source0:        https://download.gnome.org/sources/%{name}/2.71/%{name}-%{version}.tar.xz
 BuildRequires:  glib2-devel glib-networking krb5-devel gobject-introspection-devel gettext
 BuildRequires:  libxml2-devel libpsl-devel sqlite-devel vala gtk-doc meson libxslt 
 BuildRequires:  samba-winbind-clients brotli-devel
@@ -64,6 +60,9 @@ The %{name}-devel package contains libraries and header files for %{name}.
 %{_datadir}/gtk-doc/html/libsoup-2.4/*
 
 %changelog
+* Fri Aug 28 2020 zhanzhimin <zhanzhimin@huawei.com> - 2.71.0-1
+- update to 2.71.0
+
 * Tue Aug 18 2020 wenzhanli<wenzhanli2@huawei.com> - 2.70.0-2
 - add release version for update
 
