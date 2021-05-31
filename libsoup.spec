@@ -1,6 +1,6 @@
 Name:           libsoup
 Version:        2.71.0
-Release:        1
+Release:        2
 Summary:        An HTTP library implementation
 License:        LGPLv2
 URL:            https://wiki.gnome.org/Projects/libsoup
@@ -34,6 +34,7 @@ The %{name}-devel package contains libraries and header files for %{name}.
 
 %install
 %meson_install
+sed -i 's/idm[0-9]\{5,32\}/idm12345678912345/g' %{buildroot}%{_datadir}/gtk-doc/html/libsoup-2.4/ix01.html
 
 %check
 %meson_test
@@ -60,6 +61,12 @@ The %{name}-devel package contains libraries and header files for %{name}.
 %{_datadir}/gtk-doc/html/libsoup-2.4/*
 
 %changelog
+* Mon Apr 19 2021 zhanzhimin<zhanzhimin@huawei.com> - 2.71.0-2
+- Type:bugfix
+- CVE:NA
+- SUG:NA
+- DESC:sed html idm for eliminate difference
+
 * Fri Aug 28 2020 zhanzhimin <zhanzhimin@huawei.com> - 2.71.0-1
 - update to 2.71.0
 
