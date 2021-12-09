@@ -1,10 +1,10 @@
 Name:           libsoup
-Version:        2.72.0
-Release:        3
+Version:        2.74.2
+Release:        1
 Summary:        An HTTP library implementation
 License:        LGPLv2
 URL:            https://wiki.gnome.org/Projects/libsoup
-Source0:        https://download.gnome.org/sources/%{name}/2.72/%{name}-%{version}.tar.xz
+Source0:        https://download.gnome.org/sources/%{name}/2.74/%{name}-%{version}.tar.xz
 BuildRequires:  glib2-devel glib-networking krb5-devel gobject-introspection-devel gettext
 BuildRequires:  libxml2-devel libpsl-devel sqlite-devel vala gtk-doc meson libxslt
 BuildRequires:  samba-winbind-clients brotli-devel 
@@ -12,10 +12,7 @@ BuildRequires:  pkgconfig(sysprof-capture-4)
 
 Requires:       glib2 glib-networking
 
-# PATCH-FIX-UPSTREAM tests: fix SSL test with glib-networking >= 2.65.90
-Patch6000:      backport-fix-SSL-test.patch
-# PATCH-FIX-OPENSUSE disable tls_interaction-test https://gitlab.gnome.org/GNOME/libsoup/issues/120
-Patch6001:      backport-skip-tls_interaction-test.patch
+Patch6000:      backport-skip-tls_interaction-test.patch
 
 %description
 libsoup is an HTTP client/server library for GNOME. It uses GObjects and the glib main loop,
@@ -67,6 +64,9 @@ sed -i 's/idm[0-9]\{5,32\}/idm12345678912345/g' %{buildroot}%{_datadir}/gtk-doc/
 %{_datadir}/gtk-doc/html/libsoup-2.4/*
 
 %changelog
+* Thu Dec 09 2021 liuyumeng <liuyumeng5@huawei.com> - 2.74.2-1
+- update to libsoup-2.74.2
+
 * Mon Apr 19 2021 zhanzhimin<zhanzhimin@huawei.com> - 2.72.0-3
 - DESC:fix the complie failure due to glib-networking upgrade
 
