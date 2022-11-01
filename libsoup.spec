@@ -1,10 +1,13 @@
 Name:           libsoup
 Version:        2.71.0
-Release:        2
+Release:        3
 Summary:        An HTTP library implementation
 License:        LGPLv2
 URL:            https://wiki.gnome.org/Projects/libsoup
 Source0:        https://download.gnome.org/sources/%{name}/2.71/%{name}-%{version}.tar.xz
+
+Patch6000:      backport-fix-testcase-error.patch
+
 BuildRequires:  glib2-devel glib-networking krb5-devel gobject-introspection-devel gettext
 BuildRequires:  libxml2-devel libpsl-devel sqlite-devel vala gtk-doc meson libxslt 
 BuildRequires:  samba-winbind-clients brotli-devel
@@ -61,6 +64,9 @@ sed -i 's/idm[0-9]\{5,32\}/idm12345678912345/g' %{buildroot}%{_datadir}/gtk-doc/
 %{_datadir}/gtk-doc/html/libsoup-2.4/*
 
 %changelog
+* Tue Nov 01 2022 wangkerong<wangkeorng@h-partners.com> - 2.71.0-3
+- fix brotli-decompressor-test testcase failure
+
 * Mon Apr 19 2021 zhanzhimin<zhanzhimin@huawei.com> - 2.71.0-2
 - Type:bugfix
 - CVE:NA
