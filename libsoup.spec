@@ -1,6 +1,6 @@
 Name:           libsoup
-Version:        2.74.2
-Release:        2
+Version:        2.74.3
+Release:        1
 Summary:        An HTTP library implementation
 License:        LGPLv2
 URL:            https://wiki.gnome.org/Projects/libsoup
@@ -64,6 +64,9 @@ sed -i 's/idm[0-9]\{5,32\}/idm12345678912345/g' %{buildroot}%{_datadir}/gtk-doc/
 %{_datadir}/gtk-doc/html/libsoup-2.4/*
 
 %changelog
+* Mon Jan 2 2023 lin zhang <lin.zhang@turbolinux.com.cn> - 2.74.3-1
+- update to 2.74.3
+
 * Wed Oct 26 2022 zhouwenpei <zhouwenpei1@h-partners.com> - 2.74.2-2
 - Rebuild for next release
 
